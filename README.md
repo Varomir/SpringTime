@@ -11,3 +11,6 @@ Steps ToDo:
 and type yours "groupId", "artifactId", "version", "package" and confirm everything "Y"
 
 2. Import the new project to yours IDE (optional).
+
+3. Add required "Spring" dependencies to the "pom.xml" file.
+
