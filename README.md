@@ -14,3 +14,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 
 3. Add required "Spring" dependencies to the "pom.xml" file.
 
+4. Add "FirstBean".
+
