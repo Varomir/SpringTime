@@ -7,5 +7,6 @@ Steps ToDo:
 `mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp`
 and type yours "groupId", "artifactId", "version", "package" and confirm everything "Y"
 
+2. Import the new project to yours IDE (optional).
 
 
