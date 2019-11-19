@@ -10,5 +10,6 @@ public class SpringInit {
 
         System.out.println(String.format("Hello Spring World, my name is %s and I'm %d years old.",
                 ivan.getName(), ivan.getAge()));
+        ctx.close();
     }
 }
