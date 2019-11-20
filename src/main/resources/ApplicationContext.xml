@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="music" class="com.varomir.spring.AlternativeMusic"></bean>
     <bean id="iPod" class="com.varomir.spring.MusicPlayer">
-        <constructor-arg name="music" ref="music"></constructor-arg>
+        <property name="music" ref="music"></property>
     </bean>
 
 </beans>
