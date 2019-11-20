@@ -9,9 +9,22 @@
 
     <context:property-placeholder location="classpath:iPod.properties"/>
 
-    <bean id="music" class="com.varomir.spring.AlternativeMusic"></bean>
-    <bean id="iPod" class="com.varomir.spring.MusicPlayer">
-        <property name="music" ref="music"></property>
+    <bean id="alternative" class="com.varomir.spring.AlternativeMusic"></bean>
+    <bean id="rockNRoll" class="com.varomir.spring.RockNRollMusic"></bean>
+    <bean id="pop" class="com.varomir.spring.PopMusic"></bean>
+
+    <bean id="radioList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="alternative" />
+                <ref bean="rockNRoll" />
+                <ref bean="pop" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="jbl" class="com.varomir.spring.MusicPlayer">
+        <constructor-arg name="musicList" ref="radioList"></constructor-arg>
         <property name="name" value="${iPod.name}"></property>
         <property name="volume" value="${iPod.volume}"></property>
     </bean>
