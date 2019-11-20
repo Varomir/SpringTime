@@ -16,3 +16,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 
 4. Add "FirstBean".
 
+5. Add "Inversion of Control" example.
+
