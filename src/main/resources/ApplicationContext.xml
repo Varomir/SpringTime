@@ -4,5 +4,8 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="music" class="com.varomir.spring.PopMusic"></bean>
+    <bean id="iPod" class="com.varomir.spring.MusicPlayer">
+        <constructor-arg name="music" ref="music"></constructor-arg>
+    </bean>
 
 </beans>

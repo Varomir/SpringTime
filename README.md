@@ -18,3 +18,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 
 5. Add "Inversion of Control" example.
 
+6. Add "Dependency Injection" example with Spring.
+
