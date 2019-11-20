@@ -1,4 +1,9 @@
 package com.varomir.spring;
 
-public class AlternativeMusic {
+public class AlternativeMusic implements Music {
+    
+    @Override
+    public String getSong() {
+        return "Korn - Did My Time";
+    }
 }
