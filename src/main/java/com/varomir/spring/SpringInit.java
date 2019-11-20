@@ -6,10 +6,10 @@ public class SpringInit {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-        FirstBean ivan = ctx.getBean("personBean", FirstBean.class);
+        Music music = ctx.getBean("music", Music.class);
+        MusicPlayer iPod = new MusicPlayer(music);
 
-        System.out.println(String.format("Hello Spring World, my name is %s and I'm %d years old.",
-                ivan.getName(), ivan.getAge()));
+        iPod.playMusic();
         ctx.close();
     }
 }
