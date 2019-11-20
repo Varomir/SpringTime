@@ -6,6 +6,8 @@
     <bean id="music" class="com.varomir.spring.AlternativeMusic"></bean>
     <bean id="iPod" class="com.varomir.spring.MusicPlayer">
         <property name="music" ref="music"></property>
+        <property name="name" value="iPod last model"></property>
+        <property name="volume" value="25"></property>
     </bean>
 
 </beans>

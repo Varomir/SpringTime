@@ -9,6 +9,9 @@ public class SpringInit {
         MusicPlayer iPod  = ctx.getBean("iPod", MusicPlayer.class);
 
         iPod.playMusic();
+        System.out.println(iPod.getName());
+        System.out.println(iPod.getVolume());
+        
         ctx.close();
     }
 }
