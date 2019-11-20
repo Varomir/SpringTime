@@ -3,10 +3,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="personBean"
-          class="com.varomir.spring.FirstBean">
-        <constructor-arg name="name" value="Ivan"></constructor-arg>
-        <constructor-arg name="age" value="25"></constructor-arg>
-    </bean>
+    <bean id="music" class="com.varomir.spring.AlternativeMusic"></bean>
 
 </beans>
