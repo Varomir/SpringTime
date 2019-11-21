@@ -6,8 +6,8 @@ public class SpringInit {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-        MusicPlayer jbl  = ctx.getBean("jbl", MusicPlayer.class);
-        jbl.playMusic();
+        Music alternative  = ctx.getBean("alternative", AlternativeMusic.class);
+        System.out.println("Playing alternative music: " + alternative.getSong());
 
         ctx.close();
     }

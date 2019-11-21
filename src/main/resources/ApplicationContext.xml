@@ -7,27 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:iPod.properties"/>
-
     <bean id="alternative" class="com.varomir.spring.AlternativeMusic"></bean>
-    <bean id="rockNRoll" class="com.varomir.spring.RockNRollMusic"></bean>
-    <bean id="pop" class="com.varomir.spring.PopMusic" scope="prototype" init-method="initBean"
-          destroy-method="destroyBean" factory-method="getInstance"></bean>
-
-    <bean id="radioList" class="java.util.ArrayList">
-        <constructor-arg>
-            <list>
-                <ref bean="alternative"/>
-                <ref bean="rockNRoll"/>
-                <ref bean="pop"/>
-            </list>
-        </constructor-arg>
-    </bean>
-
-    <bean id="jbl" class="com.varomir.spring.MusicPlayer">
-        <constructor-arg name="musicList" ref="radioList"></constructor-arg>
-        <property name="name" value="${iPod.name}"></property>
-        <property name="volume" value="${iPod.volume}"></property>
-    </bean>
 
 </beans>
