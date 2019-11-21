@@ -6,11 +6,11 @@ public class SpringInit {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-        MusicPlayer iPod  = ctx.getBean("jbl", MusicPlayer.class);
+        MusicPlayer jbl  = ctx.getBean("jbl", MusicPlayer.class);
 
-        iPod.playMusic();
-        System.out.println(iPod.getName());
-        System.out.println(iPod.getVolume());
+        jbl.playMusic();
+        System.out.println(jbl.getName());
+        System.out.println(jbl.getVolume());
         
         ctx.close();
     }
