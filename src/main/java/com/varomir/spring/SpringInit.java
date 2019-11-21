@@ -7,11 +7,17 @@ public class SpringInit {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
         MusicPlayer jbl  = ctx.getBean("jbl", MusicPlayer.class);
+        MusicPlayer bose  = ctx.getBean("jbl", MusicPlayer.class);
 
-        jbl.playMusic();
-        System.out.println(jbl.getName());
-        System.out.println(jbl.getVolume());
-        
+        System.out.println("Is JBL and Bose are one instance? - " + (jbl == bose));
+        System.out.println();
+        System.out.println(jbl.toString());
+        System.out.println(bose.toString());
+
+        jbl.setVolume(100);
+        System.out.println("JBL  volume is: " + jbl.getVolume());
+        System.out.println("Bose volume is: " + bose.getVolume());
+
         ctx.close();
     }
 }
