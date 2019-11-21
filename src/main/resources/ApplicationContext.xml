@@ -23,7 +23,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="jbl" class="com.varomir.spring.MusicPlayer" scope="singleton">
+    <bean id="jbl" class="com.varomir.spring.MusicPlayer" scope="prototype">
         <constructor-arg name="musicList" ref="radioList"></constructor-arg>
         <property name="name" value="${iPod.name}"></property>
         <property name="volume" value="${iPod.volume}"></property>
