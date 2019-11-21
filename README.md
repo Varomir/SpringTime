@@ -20,3 +20,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 
 6. Add "Dependency Injection" example with Spring.
 
+7. Add "DI" with Properties.
+
