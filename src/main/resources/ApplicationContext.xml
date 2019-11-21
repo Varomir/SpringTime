@@ -12,7 +12,7 @@
     <bean id="alternative" class="com.varomir.spring.AlternativeMusic"></bean>
     <bean id="rockNRoll" class="com.varomir.spring.RockNRollMusic"></bean>
     <bean id="pop" class="com.varomir.spring.PopMusic" scope="prototype" init-method="initBean"
-          destroy-method="destroyBean"></bean>
+          destroy-method="destroyBean" factory-method="getInstance"></bean>
 
     <bean id="radioList" class="java.util.ArrayList">
         <constructor-arg>

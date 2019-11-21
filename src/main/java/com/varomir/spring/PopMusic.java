@@ -1,10 +1,17 @@
 package com.varomir.spring;
 
 public class PopMusic implements Music {
+    private PopMusic() {
+    }
 
     @Override
     public String getSong() {
         return "Abba - Money, Money, Money";
+    }
+
+    public static PopMusic getInstance() {
+        System.out.println(">>>> Before create an instance of PopMusic. Playing weather forecast.");
+        return new PopMusic();
     }
 
     public void initBean() {
