@@ -22,3 +22,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 
 7. Add "DI" with Properties.
 
+8. Spring scope: "Singleton" vs "Prototype".
+
