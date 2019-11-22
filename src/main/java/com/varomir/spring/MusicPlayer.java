@@ -4,23 +4,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class MusicPlayer {
+    @Qualifier("alternativeMusic")
     private Music music1;
+    @Qualifier("rockNRollMusic")
     private Music music2;
-    private List<Music> musicList = new ArrayList<>();
+    @Autowired
+    private List<Music> musicList = Arrays.asList(music1, music2);
     private String name;
     private int volume;
+
 
     public MusicPlayer() {
     }
 
-    @Autowired
-    public MusicPlayer(@Qualifier("alternativeMusic") Music music1, @Qualifier("rockNRollMusic") Music music2) {
+    public MusicPlayer(Music music1, Music music2) {
         this.musicList = Arrays.asList(music1, music2);
     }
 
