@@ -25,3 +25,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 8. Spring scope: "Singleton" vs "Prototype".
 
 9. Spring-Bean lifecycle: "init-method", "destroy-method", "factory method".
+
+10. Add Spring annotation @Component.
