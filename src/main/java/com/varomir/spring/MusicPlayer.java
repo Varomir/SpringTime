@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class MusicPlayer {
+    private RockNRollMusic rockNRollMusic;
+    private AlternativeMusic alternativeMusic;
     private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
@@ -16,17 +18,12 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
-    public MusicPlayer(Music music) {
-        this.musicList = Collections.singletonList(music);
+    @Autowired
+    public MusicPlayer(RockNRollMusic rockNRollMusic, AlternativeMusic alternativeMusic) {
+        this.musicList = Arrays.asList(rockNRollMusic, alternativeMusic);
     }
 
     public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    @Autowired
-    public void customSetterForMusicList(List<Music> musicList) {
-        System.out.println(">> Call by '@Autowired'-method annotation. Without calling this method directly from the code!");
         this.musicList = musicList;
     }
 

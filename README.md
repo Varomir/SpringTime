@@ -27,3 +27,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 9. Spring-Bean lifecycle: "init-method", "destroy-method", "factory method".
 
 10. Add Spring annotation @Component.
+
+11. Extend demo example with different @Autowire annotation usage.
