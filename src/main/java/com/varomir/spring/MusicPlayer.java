@@ -14,7 +14,7 @@ public class MusicPlayer {
     private int volume;
 
     @Autowired
-    public MusicPlayer(RockNRollMusic music) {
+    public MusicPlayer(Music music) {
         this.musicList = Collections.singletonList(music);
     }
 
