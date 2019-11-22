@@ -20,7 +20,7 @@ public class MusicPlayer {
     }
 
     @Autowired
-    public MusicPlayer(Music music1, Music music2) {
+    public MusicPlayer(@Qualifier("alternativeMusic") Music music1, @Qualifier("rockNRollMusic") Music music2) {
         this.musicList = Arrays.asList(music1, music2);
     }
 
