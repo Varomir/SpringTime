@@ -29,3 +29,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 10. Add Spring annotation @Component.
 
 11. Extend demo example with different @Autowire annotation usage.
+
+12. Add example with @Qualified Spring annotation.

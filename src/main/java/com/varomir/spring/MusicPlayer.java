@@ -1,26 +1,30 @@
 package com.varomir.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
-    private RockNRollMusic rockNRollMusic;
-    private AlternativeMusic alternativeMusic;
-    private List<Music> musicList = new ArrayList<>();
+    @Autowired
+    @Qualifier("alternativeMusic")
+    private Music alternativeMusic;
+    @Autowired
+    @Qualifier("rockNRollMusic")
+    private Music rockNRollMusic;
+    private List<Music> musicList = Arrays.asList(alternativeMusic, rockNRollMusic);
     private String name;
     private int volume;
 
     public MusicPlayer() {
     }
 
-    @Autowired
-    public MusicPlayer(RockNRollMusic rockNRollMusic, AlternativeMusic alternativeMusic) {
-        this.musicList = Arrays.asList(rockNRollMusic, alternativeMusic);
+    public MusicPlayer(Music music1, Music music2) {
+        this.musicList = Arrays.asList(music1, music2);
     }
 
     public MusicPlayer(List<Music> musicList) {
@@ -43,7 +47,23 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        musicList.forEach(s -> System.out.println(s.getSong()));
+    public void playMusic(MusicType type) {
+        System.out.println("Wave " + type);
+        String song = "";
+        switch (type) {
+            case ALTERNATIVE:
+                song = getRandomSong(alternativeMusic);
+                break;
+            case ROCKNROLL:
+                song = getRandomSong(rockNRollMusic);
+                break;
+            default:
+        }
+        System.out.println("Playing random song -> " + song);
+    }
+
+    private String getRandomSong(Music music) {
+        int rndNum = new Random().nextInt(music.getSong().size());
+        return music.getSong().get(rndNum);
     }
 }

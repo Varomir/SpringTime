@@ -6,8 +6,8 @@ public class SpringInit {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-        Smartphone smartphone = ctx.getBean("smartphone", Smartphone.class);
-        smartphone.playMusic();
+        MusicPlayer radioPlayer = ctx.getBean("musicPlayer", MusicPlayer.class);
+        radioPlayer.playMusic(MusicType.ROCKNROLL);
 
         ctx.close();
     }

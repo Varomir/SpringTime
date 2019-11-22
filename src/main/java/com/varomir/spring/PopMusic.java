@@ -1,12 +1,15 @@
 package com.varomir.spring;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PopMusic implements Music {
     private PopMusic() {
     }
 
     @Override
-    public String getSong() {
-        return "Abba - Money, Money, Money";
+    public List<String> getSong() {
+        return Arrays.asList("Abba - Money, Money, Money", "Michael Jackson - Billie Jean", "Whitney Houston - Simply The Best");
     }
 
     public static PopMusic getInstance() {
