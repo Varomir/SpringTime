@@ -16,6 +16,6 @@ public class Smartphone {
 
     public void playMusic() {
         System.out.println(">> Welcome to the " + this.brand + " media player!");
-        musicPlayerApp.playMusic();
+        musicPlayerApp.playMusic(MusicType.ALTERNATIVE);
     }
 }

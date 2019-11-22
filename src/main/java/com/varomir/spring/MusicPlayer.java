@@ -6,18 +6,19 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
-    @Qualifier("alternativeMusic")
-    private Music music1;
-    @Qualifier("rockNRollMusic")
-    private Music music2;
     @Autowired
-    private List<Music> musicList = Arrays.asList(music1, music2);
+    @Qualifier("alternativeMusic")
+    private Music alternativeMusic;
+    @Autowired
+    @Qualifier("rockNRollMusic")
+    private Music rockNRollMusic;
+    private List<Music> musicList = Arrays.asList(alternativeMusic, rockNRollMusic);
     private String name;
     private int volume;
-
 
     public MusicPlayer() {
     }
@@ -46,7 +47,23 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        musicList.forEach(s -> System.out.println(s.getSong()));
+    public void playMusic(MusicType type) {
+        System.out.println("Wave " + type);
+        String song = "";
+        switch (type) {
+            case ALTERNATIVE:
+                song = getRandomSong(alternativeMusic);
+                break;
+            case ROCKNROLL:
+                song = getRandomSong(rockNRollMusic);
+                break;
+            default:
+        }
+        System.out.println("Playing random song -> " + song);
+    }
+
+    private String getRandomSong(Music music) {
+        int rndNum = new Random().nextInt(music.getSong().size());
+        return music.getSong().get(rndNum);
     }
 }
