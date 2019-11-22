@@ -1,6 +1,7 @@
 package com.varomir.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,8 +10,8 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
-    private RockNRollMusic rockNRollMusic;
-    private AlternativeMusic alternativeMusic;
+    private Music music1;
+    private Music music2;
     private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
@@ -19,8 +20,8 @@ public class MusicPlayer {
     }
 
     @Autowired
-    public MusicPlayer(RockNRollMusic rockNRollMusic, AlternativeMusic alternativeMusic) {
-        this.musicList = Arrays.asList(rockNRollMusic, alternativeMusic);
+    public MusicPlayer(Music music1, Music music2) {
+        this.musicList = Arrays.asList(music1, music2);
     }
 
     public MusicPlayer(List<Music> musicList) {
