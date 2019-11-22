@@ -13,12 +13,20 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
-    @Autowired
+    public MusicPlayer() {
+    }
+
     public MusicPlayer(Music music) {
         this.musicList = Collections.singletonList(music);
     }
 
     public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    @Autowired
+    public void customSetterForMusicList(List<Music> musicList) {
+        System.out.println(">> Call by '@Autowired'-method annotation. Without calling this method directly from the code!");
         this.musicList = musicList;
     }
 
