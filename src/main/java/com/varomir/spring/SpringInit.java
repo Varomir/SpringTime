@@ -11,8 +11,9 @@ public class SpringInit {
         Music alternative = ctx.getBean("alternativeMusic", AlternativeMusic.class);
         Music rockNRoll = ctx.getBean("rockNRollMusic", RockNRollMusic.class);
 
-        MusicPlayer iPod = new MusicPlayer(Arrays.asList(alternative, rockNRoll));
-        iPod.playMusic();
+        MusicPlayer jbl = ctx.getBean("musicPlayer", MusicPlayer.class);
+
+        jbl.playMusic();
 
         ctx.close();
     }
