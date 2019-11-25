@@ -2,6 +2,7 @@ package com.varomir.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -17,7 +18,9 @@ public class MusicPlayer {
     @Qualifier("rockNRollMusic")
     private Music rockNRollMusic;
     private List<Music> musicList = Arrays.asList(alternativeMusic, rockNRollMusic);
+    @Value("${iPod.name}")
     private String name;
+    @Value("${iPod.volume}")
     private int volume;
 
     public MusicPlayer() {

@@ -8,6 +8,8 @@ public class SpringInit {
 
         MusicPlayer radioPlayer = ctx.getBean("musicPlayer", MusicPlayer.class);
         radioPlayer.playMusic(MusicType.ROCKNROLL);
+        System.out.println("Player brand: " + radioPlayer.getName());
+        System.out.println("Player volume: " + radioPlayer.getVolume());
 
         ctx.close();
     }
