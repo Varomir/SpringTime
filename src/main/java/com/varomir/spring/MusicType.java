@@ -1,5 +1,5 @@
 package com.varomir.spring;
 
 public enum MusicType {
-    ALTERNATIVE, ROCKNROLL
+    ALTERNATIVE, ROCKNROLL, POP
 }

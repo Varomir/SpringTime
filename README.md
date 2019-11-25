@@ -31,3 +31,5 @@ and type yours "groupId", "artifactId", "version", "package" and confirm everyth
 11. Extend demo example with different @Autowire annotation usage.
 
 12. Add example with @Qualified Spring annotation.
+
+13. Spring annotations: @Scope, @Value, @PostConstruct, @PreDestroy
