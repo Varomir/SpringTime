@@ -7,7 +7,7 @@ public class SpringInit {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
         MusicPlayer radioPlayer = ctx.getBean("musicPlayer", MusicPlayer.class);
-        radioPlayer.playMusic(MusicType.ROCKNROLL);
+        radioPlayer.playMusic(MusicType.POP);
         System.out.println("Player brand: " + radioPlayer.getName());
         System.out.println("Player volume: " + radioPlayer.getVolume());
 

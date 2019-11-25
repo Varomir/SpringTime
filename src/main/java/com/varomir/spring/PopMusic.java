@@ -1,8 +1,15 @@
 package com.varomir.spring;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
+@Scope("singleton")
 public class PopMusic implements Music {
     private PopMusic() {
     }
@@ -17,10 +24,12 @@ public class PopMusic implements Music {
         return new PopMusic();
     }
 
+    @PostConstruct
     public void initBean() {
         System.out.println(">>  Doing some specific PopMusic stuff initialization. Playing 15-seconds advertisements.");
     }
 
+    @PreDestroy
     public void destroyBean() {
         System.out.println(">>  Doing some specific PopMusic stuff destruction. Playing a notification message with the current time.");
     }

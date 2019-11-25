@@ -17,7 +17,10 @@ public class MusicPlayer {
     @Autowired
     @Qualifier("rockNRollMusic")
     private Music rockNRollMusic;
-    private List<Music> musicList = Arrays.asList(alternativeMusic, rockNRollMusic);
+    @Autowired
+    @Qualifier("popMusic")
+    private Music popMusic;
+    private List<Music> musicList = Arrays.asList(alternativeMusic, rockNRollMusic, popMusic);
     @Value("${iPod.name}")
     private String name;
     @Value("${iPod.volume}")
@@ -59,6 +62,9 @@ public class MusicPlayer {
                 break;
             case ROCKNROLL:
                 song = getRandomSong(rockNRollMusic);
+                break;
+            case POP:
+                song = getRandomSong(popMusic);
                 break;
             default:
         }
