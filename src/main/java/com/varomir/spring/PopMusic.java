@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-@Scope("singleton")
+@Scope("prototype")
 public class PopMusic implements Music {
     private PopMusic() {
     }
